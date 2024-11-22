@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Innovative Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-all">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full flex justify-between items-center px-6 py-4 bg-gray-800 shadow-md z-50">
+        <div class="text-2xl font-bold text-teal-400">MyPortfolio</div>
+        <ul class="flex space-x-6">
+          <li><a href="#home" class="hover:text-teal-400">Home</a></li>
+          <li><a href="#projects" class="hover:text-teal-400">Projects</a></li>
+          <li><a href="#skills" class="hover:text-teal-400">Skills</a></li>
+          <li><a href="#experience" class="hover:text-teal-400">Experience</a></li>
+          <li><a href="#contact" class="hover:text-teal-400">Contact</a></li>
+        </ul>
+        <!-- Dark/Light Mode Toggle Button -->
+        <button id="theme-toggle" class="flex items-center p-2 bg-teal-500 text-white rounded-full hover:bg-teal-600 focus:outline-none">
+          <i id="theme-icon" class="fas fa-sun"></i> <!-- Sun icon for Light Mode -->
+        </button>
+      </nav>
+
+    <!-- Hero/Home Section -->
+    <section
+      id="home"
+      class="min-h-screen flex flex-col md:flex-row justify-center items-center bg-gradient-to-br from-gray-900 to-gray-800 py-12 px-12 relative"
+    >
+      <!-- Text Section (Left Side) -->
+      <div
+        class="flex flex-col items-center md:items-start text-center md:text-left mb-8 md:mb-0"
+      >
+        <h1 class="text-5xl md:text-6xl font-extrabold text-teal-400 mb-4">
+          Hi, This is <span class="text-teal-300">Debashis Dhali</span>
+        </h1>
+        <div class="text-2xl md:text-3xl text-gray-400 mb-6">
+          <p>
+            I am <span id="typing-effect" class="font-medium h-10 w-50"></span>
+          </p>
+        </div>
+
+        <!-- Button Section -->
+        <a
+          href="#contact"
+          class="mt-6 bg-teal-400 text-gray-900 px-8 py-3 rounded-lg text-lg font-semibold uppercase tracking-wider hover:bg-teal-500 transition-all duration-300 ease-in-out"
+        >
+          Let's Connect
+        </a>
+      </div>
+
+      <!-- Image Section (Right Side) -->
+      <div class="relative">
+        <img
+          src="/images/my-image.png"
+          alt="Debashis Dhali"
+          class="w-90 h-70 md:w-170 md:h-280 transform transition duration-500 ease-in-out hover:scale-105"
+        />
+      </div>
+    </section>
+
+    <!-- Typing Effect Script -->
+    <script>
+      const textArray = [
+        "Web Developer",
+        "Creative Thinker",
+        "Tech Enthusiast",
+      ];
+      let i = 0;
+      let j = 0;
+      const speed = 150;
+
+      function typeEffect() {
+        if (i < textArray.length) {
+          let currentText = textArray[i];
+          let text = currentText.slice(0, j);
+          document.getElementById("typing-effect").textContent = text;
+          j++;
+          if (j <= currentText.length) {
+            setTimeout(typeEffect, speed);
+          } else {
+            setTimeout(() => {
+              j = 0;
+              i++;
+              if (i === textArray.length) {
+                i = 0; // Reset to 0 after the last item
+              }
+              setTimeout(typeEffect, speed);
+            }, 1000); // Wait for 1 second before starting the next phrase
+          }
+        }
+      }
+
+      window.onload = typeEffect;
+    </script>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 px-6 bg-gray-900">
+      <h2 class="text-3xl font-bold text-center text-teal-400">Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        <!-- Project 1 -->
+        <div
+          class="bg-gray-800 rounded-lg shadow-lg hover:shadow-teal-400 p-6 transform transition-all duration-300 hover:scale-105 hover:bg-gray-700 active:scale-95 h-60 w-70 mx-auto"
+        >
+          <h3 class="text-xl font-bold text-teal-300">Portfolio Website</h3>
+          <p class="mt-2 text-gray-400">
+            A responsive portfolio showcasing my skills, projects, and
+            experience. Built with HTML, CSS, JavaScript, and Tailwind CSS.
+          </p>
+        </div>
+        <!-- Project 2 -->
+        <div
+          class="bg-gray-800 rounded-lg shadow-lg hover:shadow-teal-400 p-6 transform transition-all duration-300 hover:scale-105 hover:bg-gray-700 active:scale-95 h-60 w-70 mx-auto"
+        >
+          <h3 class="text-xl font-bold text-teal-300">Soulemate Clock</h3>
+          <p class="mt-2 text-gray-400">
+            An analog clock application built with JavaScript, providing precise
+            and customizable timekeeping functionality.
+          </p>
+        </div>
+        <!-- Project 3 -->
+        <div
+          class="bg-gray-800 rounded-lg shadow-lg hover:shadow-teal-400 p-6 transform transition-all duration-300 hover:scale-105 hover:bg-gray-700 active:scale-95 h-60 w-70 mx-auto"
+        >
+          <h3 class="text-xl font-bold text-teal-300">
+            Flood Damage Reporting System
+          </h3>
+          <p class="mt-2 text-gray-400">
+            A website to help users report flood damage and claim insurance.
+            Developed using HTML, CSS, and JavaScript.
+          </p>
+        </div>
+        <!-- Project 4 -->
+        <div
+          class="bg-gray-800 rounded-lg shadow-lg hover:shadow-teal-400 p-6 transform transition-all duration-300 hover:scale-105 hover:bg-gray-700 active:scale-95 h-60 w-70 mx-auto"
+        >
+          <h3 class="text-xl font-bold text-teal-300">
+            IoT Fish Monitoring System
+          </h3>
+          <p class="mt-2 text-gray-400">
+            An IoT-based solution to monitor water conditions for fish
+            cultivation using ESP32 and various sensors.
+          </p>
+        </div>
+        <!-- Project 5 -->
+        <div
+          class="bg-gray-800 rounded-lg shadow-lg hover:shadow-teal-400 p-6 transform transition-all duration-300 hover:scale-105 hover:bg-gray-700 active:scale-95 h-60 w-70 mx-auto"
+        >
+          <h3 class="text-xl font-bold text-teal-300">
+            Automated Exam Process
+          </h3>
+          <p class="mt-2 text-gray-400">
+            A university system to automate the pre-exam process, including form
+            submission and mobile banking integration.
+          </p>
+        </div>
+        <!-- Project 6 -->
+        <div
+          class="bg-gray-800 rounded-lg shadow-lg hover:shadow-teal-400 p-6 transform transition-all duration-300 hover:scale-105 hover:bg-gray-700 active:scale-95 h-60 w-70 mx-auto"
+        >
+          <h3 class="text-xl font-bold text-teal-300">
+            Real-Time Weather Dashboard
+          </h3>
+          <p class="mt-2 text-gray-400">
+            A React-based weather application providing real-time weather
+            updates using an external weather API.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section
+      id="skills"
+      class="py-16 px-6 bg-gradient-to-r from-teal-500 via-teal-700 to-teal-900"
+    >
+      <h2 class="text-4xl font-extrabold text-center text-white mb-8">
+        Skills
+      </h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 mt-8">
+        <!-- Skill 1 -->
+        <div
+          class="skill-card group relative bg-gray-800 p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl"
+        >
+          <div
+            class="icon-container absolute top-0 left-0 w-full h-full bg-teal-400 opacity-0 group-hover:opacity-40 rounded-lg transition-opacity"
+          ></div>
+          <div
+            class="icon text-4xl text-teal-400 mb-4 transition-transform transform group-hover:translate-y-4"
+          >
+            <i class="fa-brands fa-html5"></i>
+            <!-- Use a font-awesome icon or similar -->
+          </div>
+          <h3
+            class="text-xl font-bold text-white group-hover:text-teal-200 transition-all"
+          >
+            HTML
+          </h3>
+          <p
+            class="text-gray-400 mt-4 opacity-0 group-hover:opacity-100 transition-opacity delay-200"
+          >
+            Building the structure of the web with semantic markup and best
+            practices.
+          </p>
+        </div>
+
+        <!-- Skill 2 -->
+        <div
+          class="skill-card group relative bg-gray-800 p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl"
+        >
+          <div
+            class="icon-container absolute top-0 left-0 w-full h-full bg-teal-400 opacity-0 group-hover:opacity-40 rounded-lg transition-opacity"
+          ></div>
+          <div
+            class="icon text-4xl text-teal-400 mb-4 transition-transform transform group-hover:translate-y-4"
+          >
+            <i class="fa-brands fa-css3-alt"></i>
+            <!-- Icon for design skills -->
+          </div>
+          <h3
+            class="text-xl font-bold text-white group-hover:text-teal-200 transition-all"
+          >
+            CSS
+          </h3>
+          <p
+            class="text-gray-400 mt-4 opacity-0 group-hover:opacity-100 transition-opacity delay-200"
+          >
+            Styling beautiful, responsive designs with CSS3 and Flexbox/Grid
+            systems.
+          </p>
+        </div>
+
+        <!-- Skill 3 -->
+        <div
+          class="skill-card group relative bg-gray-800 p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl"
+        >
+          <div
+            class="icon-container absolute top-0 left-0 w-full h-full bg-teal-400 opacity-0 group-hover:opacity-40 rounded-lg transition-opacity"
+          ></div>
+          <div
+            class="icon text-4xl text-teal-400 mb-4 transition-transform transform group-hover:translate-y-4"
+          >
+            <i class="fa-brands fa-js"></i>
+            <!-- Icon for JS -->
+          </div>
+          <h3
+            class="text-xl font-bold text-white group-hover:text-teal-200 transition-all"
+          >
+            JavaScript
+          </h3>
+          <p
+            class="text-gray-400 mt-4 opacity-0 group-hover:opacity-100 transition-opacity delay-200"
+          >
+            Adding dynamic functionality to websites with modern JavaScript
+            techniques.
+          </p>
+        </div>
+
+        <!-- Skill 4 -->
+        <div
+          class="skill-card group relative bg-gray-800 p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl"
+        >
+          <div
+            class="icon-container absolute top-0 left-0 w-full h-full bg-teal-400 opacity-0 group-hover:opacity-40 rounded-lg transition-opacity"
+          ></div>
+          <div
+            class="icon text-4xl text-teal-400 mb-4 transition-transform transform group-hover:translate-y-4"
+          >
+            <i class="fab fa-react"></i>
+            <!-- Icon for React -->
+          </div>
+          <h3
+            class="text-xl font-bold text-white group-hover:text-teal-200 transition-all"
+          >
+            React
+          </h3>
+          <p
+            class="text-gray-400 mt-4 opacity-0 group-hover:opacity-100 transition-opacity delay-200"
+          >
+            Building dynamic user interfaces with React.js and the power of
+            hooks.
+          </p>
+        </div>
+
+        <!-- Skill 5 -->
+        <div
+          class="skill-card group relative bg-gray-800 p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl"
+        >
+          <div
+            class="icon-container absolute top-0 left-0 w-full h-full bg-teal-400 opacity-0 group-hover:opacity-40 rounded-lg transition-opacity"
+          ></div>
+          <div
+            class="icon text-4xl text-teal-400 mb-4 transition-transform transform group-hover:translate-y-4"
+          >
+            <i class="fab fa-node-js"></i>
+            <!-- Icon for Node.js -->
+          </div>
+          <h3
+            class="text-xl font-bold text-white group-hover:text-teal-200 transition-all"
+          >
+            Node.js
+          </h3>
+          <p
+            class="text-gray-400 mt-4 opacity-0 group-hover:opacity-100 transition-opacity delay-200"
+          >
+            Server-side development with Node.js and building scalable
+            applications.
+          </p>
+        </div>
+
+        <!-- Skill 6 -->
+        <div
+          class="skill-card group relative bg-gray-800 p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl"
+        >
+          <div
+            class="icon-container absolute top-0 left-0 w-full h-full bg-teal-400 opacity-0 group-hover:opacity-40 rounded-lg transition-opacity"
+          ></div>
+          <div
+            class="icon text-4xl text-teal-400 mb-4 transition-transform transform group-hover:translate-y-4"
+          >
+            <i class="fa-brands fa-git-alt"></i>
+            <!-- Git icon -->
+          </div>
+          <h3
+            class="text-xl font-bold text-white group-hover:text-teal-200 transition-all"
+          >
+            Git
+          </h3>
+          <p
+            class="text-gray-400 mt-4 opacity-0 group-hover:opacity-100 transition-opacity delay-200"
+          >
+            Version control and collaborative coding with Git and GitHub.
+          </p>
+        </div>
+
+        <!-- Skill 7 -->
+        <!-- Skill 1: SQL (replacing MongoDB) -->
+        <div
+          class="skill-card group relative bg-gray-800 p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl"
+        >
+          <div
+            class="icon-container absolute top-0 left-0 w-full h-full bg-teal-400 opacity-0 group-hover:opacity-40 rounded-lg transition-opacity"
+          ></div>
+          <div
+            class="icon text-4xl text-teal-400 mb-4 transition-transform transform group-hover:translate-y-4"
+          >
+            <i class="fas fa-database"></i>
+            <!-- FontAwesome icon for SQL (similar to MongoDB) -->
+          </div>
+          <h3
+            class="text-xl font-bold text-white group-hover:text-teal-200 transition-all"
+          >
+            SQL
+          </h3>
+          <p
+            class="text-gray-400 mt-4 opacity-0 group-hover:opacity-100 transition-opacity delay-200"
+          >
+            Working with relational databases using SQL for querying and
+            managing structured data.
+          </p>
+        </div>
+
+        <!-- Skill 2: Bootstrap (replacing Docker) -->
+        <div
+          class="skill-card group relative bg-gray-800 p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl"
+        >
+          <div
+            class="icon-container absolute top-0 left-0 w-full h-full bg-teal-400 opacity-0 group-hover:opacity-40 rounded-lg transition-opacity"
+          ></div>
+          <div
+            class="icon text-4xl text-teal-400 mb-4 transition-transform transform group-hover:translate-y-4"
+          >
+            <i class="fab fa-bootstrap"></i>
+            <!-- FontAwesome icon for Bootstrap -->
+          </div>
+          <h3
+            class="text-xl font-bold text-white group-hover:text-teal-200 transition-all"
+          >
+            Bootstrap
+          </h3>
+          <p
+            class="text-gray-400 mt-4 opacity-0 group-hover:opacity-100 transition-opacity delay-200"
+          >
+            Frontend framework for building responsive, mobile-first websites
+            with pre-designed components.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section
+      id="experience"
+      class="py-16 px-6 bg-gradient-to-r from-teal-500 via-teal-700 to-teal-900"
+    >
+      <h2 class="text-4xl font-extrabold text-center text-white mb-8">
+        Experience
+      </h2>
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <!-- Volunteering Experience -->
+        <div
+          class="bg-gray-800 p-8 rounded-lg shadow-xl hover:scale-105 transition-transform transform hover:shadow-2xl"
+        >
+          <h3
+            class="text-2xl font-semibold text-teal-400 mb-2 transition-all hover:text-teal-200"
+          >
+            Volunteering - NCPC 2023
+          </h3>
+          <p class="text-lg font-medium text-gray-300">
+            National Cybersecurity & Programming Conference | Mar 2023
+          </p>
+          <div class="mt-4 space-y-3">
+            <ul class="list-disc pl-5 text-gray-400 space-y-2">
+              <li>
+                Assisted with event coordination and helped ensure smooth
+                operations during the conference.
+              </li>
+              <li>
+                Managed attendee registrations and facilitated interactive
+                workshops on cybersecurity topics.
+              </li>
+              <li>
+                Collaborated with a team of volunteers to manage logistics and
+                technical setups for sessions.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- IoT Training -->
+        <div
+          class="bg-gray-800 p-8 rounded-lg shadow-xl hover:scale-105 transition-transform transform hover:shadow-2xl"
+        >
+          <h3
+            class="text-2xl font-semibold text-teal-400 mb-2 transition-all hover:text-teal-200"
+          >
+            IoT Training - EDGE Programme
+          </h3>
+          <p class="text-lg font-medium text-gray-300">
+            EDGE Programme | Jul 2023 - Aug 2023
+          </p>
+          <div class="mt-4 space-y-3">
+            <ul class="list-disc pl-5 text-gray-400 space-y-2">
+              <li>
+                Completed an intensive training program focused on IoT systems
+                and sensor technologies.
+              </li>
+              <li>
+                Learned to integrate sensors with microcontrollers like ESP32
+                for real-world IoT applications.
+              </li>
+              <li>
+                Built practical IoT projects such as smart environments and
+                automated systems for remote monitoring.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Scout Rover -->
+        <div
+          class="bg-gray-800 p-8 rounded-lg shadow-xl hover:scale-105 transition-transform transform hover:shadow-2xl"
+        >
+          <h3
+            class="text-2xl font-semibold text-teal-400 mb-2 transition-all hover:text-teal-200"
+          >
+            Scout Rover Project
+          </h3>
+          <p class="text-lg font-medium text-gray-300">
+            Self-Driven Project | 2022 - 2023
+          </p>
+          <div class="mt-4 space-y-3">
+            <ul class="list-disc pl-5 text-gray-400 space-y-2">
+              <li>
+                Designed and developed a Scout Rover, an autonomous robotic
+                vehicle for scouting in challenging terrains.
+              </li>
+              <li>
+                Implemented computer vision and sensor integration for real-time
+                navigation and obstacle avoidance.
+              </li>
+              <li>
+                Led a team of peers in developing the rover’s software and
+                hardware components for field testing.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Event Management -->
+        <div
+          class="bg-gray-800 p-8 rounded-lg shadow-xl hover:scale-105 transition-transform transform hover:shadow-2xl"
+        >
+          <h3
+            class="text-2xl font-semibold text-teal-400 mb-2 transition-all hover:text-teal-200"
+          >
+            Event Management
+          </h3>
+          <p class="text-lg font-medium text-gray-300">
+            University Events | 2021 - Present
+          </p>
+          <div class="mt-4 space-y-3">
+            <ul class="list-disc pl-5 text-gray-400 space-y-2">
+              <li>
+                Coordinated and managed multiple events, ensuring seamless
+                execution from planning to post-event feedback.
+              </li>
+              <li>
+                Handled logistics, guest invitations, and on-site coordination
+                for events ranging from workshops to seminars.
+              </li>
+              <li>
+                Developed event promotion strategies and worked with teams to
+                ensure high attendance and engagement.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-6 bg-gray-800">
+      <h2 class="text-3xl font-bold text-center text-teal-400">Contact</h2>
+
+      <!-- Contact Form -->
+      <form class="mt-8 max-w-lg mx-auto space-y-6">
+        <input
+          type="text"
+          placeholder="Name"
+          class="w-full px-4 py-2 bg-gray-700 text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          class="w-full px-4 py-2 bg-gray-700 text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
+        />
+        <textarea
+          placeholder="Message"
+          rows="4"
+          class="w-full px-4 py-2 bg-gray-700 text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
+        ></textarea>
+        <button
+          type="submit"
+          class="w-full bg-teal-400 text-gray-900 px-4 py-2 rounded-lg hover:bg-teal-500"
+        >
+          Send Message
+        </button>
+      </form>
+
+      <!-- Social Links -->
+      <div class="mt-8 text-center">
+        <h3 class="text-xl font-semibold text-teal-400">Connect with me</h3>
+        <div class="flex justify-center gap-6 mt-4">
+          <!-- Social Media Links -->
+          <a
+            href="https://www.linkedin.com"
+            target="_blank"
+            class="text-teal-400 hover:text-teal-600"
+          >
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+          <a
+            href="https://github.com"
+            target="_blank"
+            class="text-teal-400 hover:text-teal-600"
+          >
+            <i class="fab fa-github fa-2x"></i>
+          </a>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            class="text-teal-400 hover:text-teal-600"
+          >
+            <i class="fab fa-twitter fa-2x"></i>
+          </a>
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            class="text-teal-400 hover:text-teal-600"
+          >
+            <i class="fab fa-instagram fa-2x"></i>
+          </a>
+          <!-- Add other social media links similarly -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-gray-900 text-center">
+      <p class="text-gray-400">© 2024 Debashis Dhali. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get the theme toggle button and icon
+        const toggleButton = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+    
+        // Check for the saved theme in localStorage
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+          document.body.classList.add(currentTheme);
+          if (currentTheme === 'dark') {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+           
+          }
+        }
+    
+        // Function to toggle between light and dark mode
+        toggleButton.addEventListener('click', () => {
+          // Toggle the 'dark' class on the body element
+          document.body.classList.toggle('dark');
+    
+          // Change icon based on the current theme
+          if (document.body.classList.contains('dark')) {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+            // Save dark theme in localStorage
+            localStorage.setItem('theme', 'dark');
+          } else {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+            // Save light theme in localStorage
+            localStorage.setItem('theme', 'light');
+          }
+        });
+      </script>
+  </body>
+</html>
